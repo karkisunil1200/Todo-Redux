@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Todo from '../Todo/Todo';
+import TodoForm from '../TodoForm/TodoForm';
 
 const TodoContainer = props => {
   return (
@@ -8,6 +9,8 @@ const TodoContainer = props => {
       {props.todos.map(todo => {
         return <Todo {...todo} />;
       })}
+
+      <TodoForm />
     </div>
   );
 };
