@@ -31,6 +31,7 @@ class TodoForm extends Component {
             value={this.state.newTodo}
             onChange={this.handleChange}
             placeholder='Add to do'
+            required
           />
           <button>Add Me</button>
         </form>
