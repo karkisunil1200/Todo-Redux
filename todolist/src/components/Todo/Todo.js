@@ -1,12 +1,13 @@
 import React from 'react';
-import {deleteTodo} from '../../actions/index';
+import {deleteTodo, toggleTodo} from '../../actions/index';
 import {connect} from 'react-redux';
+import '../../App.css';
 
 const Todo = props => {
   return (
     <div>
       <h2>
-        <p>
+        <p onClick={() => props.toggleTodo(props.id)} className={props.complete && 'complete'}>
           {props.task}
           <span onClick={() => props.deleteTodo(props.id)}>
             <i className='fas fa-trash-alt' />
@@ -25,5 +26,5 @@ const stateToProps = state => {
 
 export default connect(
   stateToProps,
-  {deleteTodo}
+  {deleteTodo, toggleTodo}
 )(Todo);
